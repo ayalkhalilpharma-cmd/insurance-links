@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mena's Online</title>
+    <style>
+        :root {
+            --primary-color: #1e3a8a; 
+            --hover-color: #2563eb;   
+            --bg-color: #f1f5f9;      
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --success-color: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #bfdbfe;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .link-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 180px;
+        }
+
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-color);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .link-card.new-link::before {
+            background-color: var(--success-color);
+        }
+
+        .card-header {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .link-title {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .link-subtitle {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            display: block;
+        }
+
+        .badge {
+            background-color: #d1fae5;
+            color: #065f46;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            vertical-align: text-bottom;
+        }
+
+        /* Action Button */
+        .visit-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: auto;
+            transition: background-color 0.2s;
+        }
+
+        .visit-btn:hover {
+            background-color: var(--hover-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mena's Online</h1>
+        <p>Medical & Insurance Service Portal Directory</p>
+    </header>
+
+    <div class="container">
+        <div class="links-grid">
+            
+            <!-- Card 1: GlobeMed -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">GlobeMed Egypt</span>
+                    <span class="link-subtitle">i-Care Portal</span>
+                </div>
+                <a href="https://i-care.globemedegypt.com:8034/Index.cfm" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 2: Nextcare New -->
+            <div class="link-card new-link">
+                <div class="card-header">
+                    <span class="link-title">Nextcare <span class="badge">NEW</span></span>
+                    <span class="link-subtitle">Pulse PP Auth Login</span>
+                </div>
+                <a href="https://pulsepp-egp.nextcarehealth.com/auth/login?returnUrl=%2F" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 3: Nextcare Old -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">Nextcare (Old)</span>
+                    <span class="link-subtitle">Pulse Eligibility Checking</span>
+                </div>
+                <a href="https://pulse-egp.nextcarehealth.com/EligibilityChecking2.aspx" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 4: NiceDeer -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">NiceDeer</span>
+                    <span class="link-subtitle">Account Login</span>
+                </div>
+                <a href="https://nicedeer.net/Account/Login" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 5: Yodawy -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">Yodawy</span>
+                    <span class="link-subtitle">Orders Portal Login</span>
+                </div>
+                <a href="https://orders.yodawy.com/#/Login?_k=5obkru" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 6: DMS Egypt -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">DMS Egypt</span>
+                    <span class="link-subtitle">Pharmacy Login Portal</span>
+                </div>
+                <a href="http://www.dms-eg.net/Account/Login?ReturnUrl=%2FPharmacy%2FPharmacy" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 7: MedNet -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">MedNet Egypt</span>
+                    <span class="link-subtitle">MedNeXt Online Systems</span>
+                </div>
+                <a href="https://online.mednet-egypt.com/MedNeXtOnline/faces/pages/login.jspx;MEDNEXT_ONLINE=pBCD9PmEfufrYf9pnEkmFxe0DoLqg91d8Pz9iDHHbsRXHebtm3nuxTW7srAn_Mxn9yHWmgrdtJMdx1saXiMiAKy9oQg0irQWjkKGicz70wbvjUE0QCKkzY2qgd-v_RPP!736404285" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 8: Med-Right Old -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">Med-Right (Old)</span>
+                    <span class="link-subtitle">eTPA Authorization Login</span>
+                </div>
+                <a href="https://etpa.med-right.com/login" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 9: Al - Mashreq -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">Al - Mashreq</span>
+                    <span class="link-subtitle">Online Portal Login</span>
+                </div>
+                <a href="https://aspircode.com/online/login" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 10: HelpAtCare -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">HelpAtCare</span>
+                    <span class="link-subtitle">User Management Login</span>
+                </div>
+                <a href="https://www.helpatcare.com/login" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 11: Uni-Act / MIS eRx -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">Uni-Act / MIS eRx</span>
+                    <span class="link-subtitle">ORDS Online Portal</span>
+                </div>
+                <a href="https://app.uni-act.org/ords/r/mis/erx105/login?session=13863247941731" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 12: Smart Medical Services -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">Smart Medical Services</span>
+                    <span class="link-subtitle">Meds Portal Login</span>
+                </div>
+                <a href="http://www.meds.smart-medicalservices.com.s3-website.eu-central-1.amazonaws.com/#/login" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 13: Med-Right New -->
+            <div class="link-card">
+                <div class="card-header">
+                    <span class="link-title">Med-Right</span>
+                    <span class="link-subtitle">medTPA Portal Login</span>
+                </div>
+                <a href="https://medtpa.med-right.com/Login" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+            <!-- Card 14: Ray -->
+            <div class="link-card new-link">
+                <div class="card-header">
+                    <span class="link-title">Ray <span class="badge">NEW</span></span>
+                    <span class="link-subtitle">AbbVie Care PSP Portal</span>
+                </div>
+                <a href="https://abbviecarepsp.com/LoginP.aspx" target="_blank" class="visit-btn">Open Website</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Mena's Online Directory. 
+    </footer>
+
+</body>
+</html>
