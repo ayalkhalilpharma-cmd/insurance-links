@@ -41,7 +41,7 @@
             text-transform: uppercase;
         }
 
-        /* Honeycomb Flex Layout (Prevents Overlapping) */
+        /* Honeycomb Flex Layout */
         .honeycomb-grid {
             display: flex;
             flex-wrap: wrap;
@@ -55,7 +55,6 @@
 
         /* Shadow Wrapper for Hexagons */
         .hex-wrapper {
-            /* clip-path hides standard box-shadows, so we use drop-shadow on a wrapper */
             filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
@@ -72,7 +71,6 @@
             width: 170px;
             height: 195px;
             background-color: var(--clr);
-            /* Draws a perfect pointed-top hexagon */
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
@@ -164,6 +162,7 @@
         }
     </style>
     
+    <!-- GoatCounter Tracking Script -->
     <script data-goatcounter="https://khalil-pharmacy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -199,9 +198,11 @@
         </div>
         
         <div class="hex-wrapper">
-            <a href="https://online.mednet-egypt.com/MedNeXtOnline/..." target="_blank" class="visit-btn" style="--clr: #0288D1;">MedNet</a>
+            <!-- FIXED MEDNET LINK -->
+            <a href="https://online.mednet-egypt.com/MedNeXtOnline/" target="_blank" class="visit-btn" style="--clr: #0288D1;">MedNet</a>
         </div>
         
+        <!-- CENTER CLOCK -->
         <div class="clock-wrapper">
             <div class="clock-hex">
                 <div id="clock-time">00:00:00</div>
@@ -240,10 +241,10 @@
 
     </div>
 
+    <!-- Hidden Tooltip Element for Quotes -->
     <div id="quote-tooltip" class="quote-tooltip"></div>
 
     <script>
-        // --- LIVE CLOCK LOGIC ---
         function updateClock() {
             const now = new Date();
             const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -255,9 +256,7 @@
             let ampm = h >= 12 ? 'PM' : 'AM';
             
             h = h % 12;
-            h = h ? h : 12; // the hour '0' should be '12'
-            
-            // Format numbers to always have two digits
+            h = h ? h : 12;
             m = m < 10 ? '0' + m : m;
             s = s < 10 ? '0' + s : s;
 
@@ -269,7 +268,6 @@
         updateClock();
         setInterval(updateClock, 1000);
 
-        // --- MOTIVATIONAL QUOTES LOGIC ---
         const quotes = [
             "“The secret of getting ahead is getting started.”",
             "“Hard work beats talent when talent doesn't work hard.”",
@@ -292,7 +290,6 @@
                 tooltip.innerText = randomQuote;
                 tooltip.classList.add('show');
                 
-                // Position the tooltip dynamically right above the hexagon
                 const rect = wrapper.getBoundingClientRect();
                 tooltip.style.left = (rect.left + (rect.width / 2)) + 'px';
                 tooltip.style.top = (rect.top - 10) + 'px';
@@ -303,7 +300,6 @@
             });
         });
 
-        // Hide tooltip immediately when scrolling
         window.addEventListener('scroll', () => {
             tooltip.classList.remove('show');
         });
