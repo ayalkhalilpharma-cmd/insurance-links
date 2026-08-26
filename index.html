@@ -48,7 +48,7 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -89,6 +89,36 @@
 
         .hex-wrapper:hover .visit-btn {
             filter: brightness(1.15);
+        }
+
+        /* --- Tree Leaf Button Styling --- */
+        .leaf-wrapper {
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .leaf-wrapper:hover {
+            transform: scale(1.15) translateY(-8px);
+            filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.3));
+            z-index: 10;
+        }
+
+        .leaf-btn {
+            width: 170px;
+            height: 195px;
+            background-color: #2E7D32; /* Rich Forest Green */
+            /* Organic Leaf Shape using smooth SVG path clip */
+            clip-path: path('M85,8 C125,50 160,105 140,152 C125,180 98,192 85,195 C72,192 45,180 30,152 C10,105 45,50 85,8 Z');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: filter 0.3s;
+        }
+
+        .leaf-wrapper:hover .leaf-btn {
+            filter: brightness(1.18);
         }
 
         /* Giant Center Clock Hexagon */
@@ -173,33 +203,37 @@
 
     <div class="honeycomb-grid">
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Al - Mashreq">
             <a href="https://aspircode.com/online/login" target="_blank" class="visit-btn" style="--clr: #D32F2F;">Al - Mashreq</a>
         </div>
         
-        <div class="hex-wrapper">
+        <!-- BRANCH NUMBERS LEAF BUTTON (No words on button, leaf shape) -->
+        <div class="leaf-wrapper" data-title="Branch Numbers">
+            <a href="https://ayalkhalilpharma-cmd.github.io/khalil-guide/" target="_blank" class="leaf-btn">
+                <svg viewBox="0 0 24 24" width="55" height="55" fill="white" opacity="0.9">
+                    <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10,10-4.48,10-10S17.52,2,12,2zm-1,17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9,15v1c0,1.1.9,2,2,2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55,0,1-.45,1-1V7h2c1.1,0,2-.9,2-2v-.41c2.93,1.19,5,4.06,5,7.41,0,2.08-.8,3.97-2.1,5.39z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="hex-wrapper" data-title="DMS Egypt">
             <a href="http://www.dms-eg.net/Account/Login?ReturnUrl=%2FPharmacy%2FPharmacy" target="_blank" class="visit-btn" style="--clr: #C2185B;">DMS Egypt</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="GlobeMed">
             <a href="https://i-care.globemedegypt.com:8034/Index.cfm" target="_blank" class="visit-btn" style="--clr: #7B1FA2;">GlobeMed</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="HelpAtCare">
             <a href="https://www.helpatcare.com/login" target="_blank" class="visit-btn" style="--clr: #512DA8;">HelpAtCare</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Med-Right">
             <a href="https://medtpa.med-right.com/Login" target="_blank" class="visit-btn" style="--clr: #303F9F;">Med-Right</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Med-Right (Old)">
             <a href="https://etpa.med-right.com/login" target="_blank" class="visit-btn" style="--clr: #1976D2;">Med-Right (Old)</a>
-        </div>
-        
-        <div class="hex-wrapper">
-            <!-- FIXED MEDNET LINK -->
-            <a href="https://online.mednet-egypt.com/MedNeXtOnline/" target="_blank" class="visit-btn" style="--clr: #0288D1;">MedNet</a>
         </div>
         
         <!-- CENTER CLOCK -->
@@ -211,31 +245,35 @@
             </div>
         </div>
 
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="MedNet">
+            <a href="https://online.mednet-egypt.com/MedNeXtOnline/" target="_blank" class="visit-btn" style="--clr: #0288D1;">MedNet</a>
+        </div>
+        
+        <div class="hex-wrapper" data-title="Nextcare">
             <a href="https://pulsepp-egp.nextcarehealth.com/auth/login?returnUrl=%2F" target="_blank" class="visit-btn" style="--clr: #0097A7;">Nextcare</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Nextcare (Old)">
             <a href="https://pulse-egp.nextcarehealth.com/EligibilityChecking2.aspx" target="_blank" class="visit-btn" style="--clr: #00796B;">Nextcare (Old)</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="NiceDeer">
             <a href="https://nicedeer.net/Account/Login" target="_blank" class="visit-btn" style="--clr: #388E3C;">NiceDeer</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Ray">
             <a href="https://abbviecarepsp.com/LoginP.aspx" target="_blank" class="visit-btn" style="--clr: #689F38;">Ray</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Smart Meds">
             <a href="http://www.meds.smart-medicalservices.com.s3-website.eu-central-1.amazonaws.com/#/login" target="_blank" class="visit-btn" style="--clr: #AFB42B;">Smart Meds</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Uni-Act">
             <a href="https://app.uni-act.org/ords/r/mis/erx105/login?session=13863247941731" target="_blank" class="visit-btn" style="--clr: #F57C00;">Uni-Act</a>
         </div>
         
-        <div class="hex-wrapper">
+        <div class="hex-wrapper" data-title="Yodawy">
             <a href="https://orders.yodawy.com/#/Login?_k=5obkru" target="_blank" class="visit-btn" style="--clr: #E64A19;">Yodawy</a>
         </div>
 
@@ -282,20 +320,25 @@
         ];
 
         const tooltip = document.getElementById('quote-tooltip');
-        const hexWrappers = document.querySelectorAll('.hex-wrapper');
+        
+        // Handle hover tooltips for both hexagon buttons and the leaf button
+        const interactiveItems = document.querySelectorAll('.hex-wrapper, .leaf-wrapper');
 
-        hexWrappers.forEach(wrapper => {
-            wrapper.addEventListener('mouseenter', () => {
+        interactiveItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const title = item.getAttribute('data-title');
                 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-                tooltip.innerText = randomQuote;
+                
+                // Display title + quote together on hover
+                tooltip.innerHTML = `<strong style="color: #60a5fa; display: block; margin-bottom: 4px;">${title}</strong>${randomQuote}`;
                 tooltip.classList.add('show');
                 
-                const rect = wrapper.getBoundingClientRect();
+                const rect = item.getBoundingClientRect();
                 tooltip.style.left = (rect.left + (rect.width / 2)) + 'px';
                 tooltip.style.top = (rect.top - 10) + 'px';
             });
             
-            wrapper.addEventListener('mouseleave', () => {
+            item.addEventListener('mouseleave', () => {
                 tooltip.classList.remove('show');
             });
         });
