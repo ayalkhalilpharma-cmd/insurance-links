@@ -91,34 +91,33 @@
             filter: brightness(1.15);
         }
 
-        /* --- Tree Leaf Button Styling --- */
-        .leaf-wrapper {
+        /* --- Custom Retro Telephone Buttons --- */
+        .phone-wrapper {
             filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 170px; /* Perfectly aligns with hexagons */
+            height: 195px;
         }
 
-        .leaf-wrapper:hover {
+        .phone-wrapper:hover {
             transform: scale(1.15) translateY(-8px);
             filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.3));
             z-index: 10;
         }
 
-        .leaf-btn {
-            width: 170px;
-            height: 195px;
-            background-color: #2E7D32; /* Rich Forest Green */
-            /* Organic Leaf Shape using smooth SVG path clip */
-            clip-path: path('M85,8 C125,50 160,105 140,152 C125,180 98,192 85,195 C72,192 45,180 30,152 C10,105 45,50 85,8 Z');
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
+        .retro-phone {
+            width: 155px;
+            height: 155px;
+            color: var(--phone-clr);
             transition: filter 0.3s;
         }
 
-        .leaf-wrapper:hover .leaf-btn {
-            filter: brightness(1.18);
+        .phone-wrapper:hover .retro-phone {
+            filter: brightness(1.2);
         }
 
         /* Giant Center Clock Hexagon */
@@ -207,11 +206,58 @@
             <a href="https://aspircode.com/online/login" target="_blank" class="visit-btn" style="--clr: #D32F2F;">Al - Mashreq</a>
         </div>
         
-        <!-- BRANCH NUMBERS LEAF BUTTON (No words on button, leaf shape) -->
-        <div class="leaf-wrapper" data-title="Branch Numbers">
-            <a href="https://ayalkhalilpharma-cmd.github.io/khalil-guide/" target="_blank" class="leaf-btn">
-                <svg viewBox="0 0 24 24" width="55" height="55" fill="white" opacity="0.9">
-                    <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10,10-4.48,10-10S17.52,2,12,2zm-1,17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9,15v1c0,1.1.9,2,2,2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55,0,1-.45,1-1V7h2c1.1,0,2-.9,2-2v-.41c2.93,1.19,5,4.06,5,7.41,0,2.08-.8,3.97-2.1,5.39z"/>
+        <!-- BRANCH NUMBERS (Green Old Telephone) -->
+        <div class="phone-wrapper" data-title="Branch Numbers">
+            <a href="https://ayalkhalilpharma-cmd.github.io/khalil-guide/" target="_blank">
+                <svg viewBox="0 0 200 200" class="retro-phone" style="--phone-clr: #2E7D32;">
+                    <!-- Telephone Base -->
+                    <path d="M 55,70 L 145,70 C 155,70 162,75 165,85 L 185,165 C 188,177 180,190 165,190 L 35,190 C 20,190 12,177 15,165 L 35,85 C 38,75 45,70 55,70 Z" fill="currentColor"/>
+                    <!-- Handset Curve -->
+                    <path d="M 35,50 C 35,15 80,10 100,10 C 120,10 165,15 165,50" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
+                    <!-- Handset Earpieces -->
+                    <rect x="20" y="40" width="30" height="24" rx="12" fill="currentColor"/>
+                    <rect x="150" y="40" width="30" height="24" rx="12" fill="currentColor"/>
+                    <!-- Rotary Dial Base (White) -->
+                    <circle cx="100" cy="135" r="38" fill="#ffffff"/>
+                    <!-- Dial Center -->
+                    <circle cx="100" cy="135" r="12" fill="currentColor"/>
+                    <!-- Rotary Dial Holes -->
+                    <circle cx="100" cy="112" r="5" fill="currentColor"/>
+                    <circle cx="116" cy="119" r="5" fill="currentColor"/>
+                    <circle cx="123" cy="135" r="5" fill="currentColor"/>
+                    <circle cx="116" cy="151" r="5" fill="currentColor"/>
+                    <circle cx="100" cy="158" r="5" fill="currentColor"/>
+                    <circle cx="84" cy="151" r="5" fill="currentColor"/>
+                    <circle cx="77" cy="135" r="5" fill="currentColor"/>
+                    <circle cx="84" cy="119" r="5" fill="currentColor"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- COMPANY CONTACTS (Blue Old Telephone) -->
+        <div class="phone-wrapper" data-title="Company Contacts">
+            <a href="https://ayalkhalilpharma-cmd.github.io/company-guide/" target="_blank">
+                <svg viewBox="0 0 200 200" class="retro-phone" style="--phone-clr: #1565C0;">
+                    <!-- Telephone Base -->
+                    <path d="M 55,70 L 145,70 C 155,70 162,75 165,85 L 185,165 C 188,177 180,190 165,190 L 35,190 C 20,190 12,177 15,165 L 35,85 C 38,75 45,70 55,70 Z" fill="currentColor"/>
+                    <!-- Handset Curve -->
+                    <path d="M 35,50 C 35,15 80,10 100,10 C 120,10 165,15 165,50" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
+                    <!-- Handset Earpieces -->
+                    <rect x="20" y="40" width="30" height="24" rx="12" fill="currentColor"/>
+                    <rect x="150" y="40" width="30" height="24" rx="12" fill="currentColor"/>
+                    <!-- Rotary Dial Base (White) -->
+                    <circle cx="100" cy="135" r="38" fill="#ffffff"/>
+                    <!-- Dial Center -->
+                    <circle cx="100" cy="135" r="12" fill="currentColor"/>
+                    <!-- Rotary Dial Holes -->
+                    <circle cx="100" cy="112" r="5" fill="currentColor"/>
+                    <circle cx="116" cy="119" r="5" fill="currentColor"/>
+                    <circle cx="123" cy="135" r="5" fill="currentColor"/>
+                    <circle cx="116" cy="151" r="5" fill="currentColor"/>
+                    <circle cx="100" cy="158" r="5" fill="currentColor"/>
+                    <circle cx="84" cy="151" r="5" fill="currentColor"/>
+                    <circle cx="77" cy="135" r="5" fill="currentColor"/>
+                    <circle cx="84" cy="119" r="5" fill="currentColor"/>
                 </svg>
             </a>
         </div>
@@ -236,7 +282,7 @@
             <a href="https://etpa.med-right.com/login" target="_blank" class="visit-btn" style="--clr: #1976D2;">Med-Right (Old)</a>
         </div>
         
-        <!-- CENTER CLOCK -->
+        <!-- CENTER CLOCK (Perfectly centered between the 16 links) -->
         <div class="clock-wrapper">
             <div class="clock-hex">
                 <div id="clock-time">00:00:00</div>
@@ -321,8 +367,8 @@
 
         const tooltip = document.getElementById('quote-tooltip');
         
-        // Handle hover tooltips for both hexagon buttons and the leaf button
-        const interactiveItems = document.querySelectorAll('.hex-wrapper, .leaf-wrapper');
+        // Ensure BOTH hex shapes and the new custom phone wrappers trigger tooltips!
+        const interactiveItems = document.querySelectorAll('.hex-wrapper, .phone-wrapper');
 
         interactiveItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
