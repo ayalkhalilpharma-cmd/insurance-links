@@ -329,6 +329,27 @@
             transform: translate(-50%, -100%) translateY(0);
         }
 
+        /* Howling Direwolf Container (Hidden by default) */
+        .wolf-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 45px;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+
+        .wolf-container:hover {
+            opacity: 1;
+        }
+
+        .wolf-svg {
+            width: 170px;
+            height: 170px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+        }
+
         /* =========================================================
            AHMEDELDEEB MODE (Eye-Comforting Blackboard Theme)
            ========================================================= */
@@ -350,18 +371,18 @@
         }
 
         body.ahmedeldeeb-mode .honeycomb-grid {
-            gap: 12px;
-            max-width: 950px;
+            gap: 14px;
+            max-width: 1000px;
         }
 
-        /* Reset wrappers to small rectangular boxes */
+        /* Rectangular Button Sizes */
         body.ahmedeldeeb-mode .hex-wrapper,
         body.ahmedeldeeb-mode .phone-wrapper,
         body.ahmedeldeeb-mode .key-wrapper,
         body.ahmedeldeeb-mode .dx-rx-wrapper,
         body.ahmedeldeeb-mode .custom-shape-wrapper {
-            width: 170px !important;
-            height: 48px !important;
+            width: 210px !important;
+            height: 56px !important;
             filter: none !important;
             transform: none !important;
         }
@@ -386,19 +407,19 @@
             clip-path: none !important;
             background: #1c2128 !important;
             border: 1px solid #444c56 !important;
-            border-radius: 6px !important;
+            border-radius: 8px !important;
             color: #e6edf3 !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             font-family: 'Segoe UI', Arial, sans-serif !important;
-            font-size: 0.88rem !important;
+            font-size: 0.98rem !important;
             font-weight: 600 !important;
             text-transform: none !important;
             letter-spacing: 0.5px !important;
             box-shadow: none !important;
             text-decoration: none !important;
-            padding: 0 10px !important;
+            padding: 0 12px !important;
             text-align: center !important;
             box-sizing: border-box !important;
         }
@@ -422,7 +443,7 @@
         body.ahmedeldeeb-mode [data-label]::after {
             content: attr(data-label);
             display: block;
-            font-size: 0.88rem;
+            font-size: 0.98rem;
             color: #e6edf3;
             font-weight: 600;
             font-style: normal;
@@ -438,9 +459,9 @@
         }
 
         body.ahmedeldeeb-mode .clock-hex {
-            width: 360px !important;
+            width: 440px !important;
             height: auto !important;
-            padding: 10px 20px !important;
+            padding: 12px 20px !important;
             background-color: #1c2128 !important;
             border: 1px solid #444c56 !important;
             border-radius: 8px !important;
@@ -448,7 +469,7 @@
         }
 
         body.ahmedeldeeb-mode #clock-time {
-            font-size: 1.6rem !important;
+            font-size: 1.7rem !important;
             color: #38bdf8 !important;
             margin-bottom: 2px !important;
         }
@@ -462,6 +483,11 @@
             font-size: 0.85rem !important;
             color: #64748b !important;
             margin-top: 2px !important;
+        }
+
+        /* Display Howling Direwolf in Ahmedeldeeb Mode */
+        body.ahmedeldeeb-mode .wolf-container {
+            display: flex;
         }
     </style>
     
@@ -648,6 +674,41 @@
             <a href="https://orders.yodawy.com/#/Login?_k=5obkru" target="_blank" class="visit-btn" style="--clr: #E64A19;">Yodawy</a>
         </div>
 
+    </div>
+
+    <!-- Howling Direwolf Illustration (Bottom) -->
+    <div class="wolf-container">
+        <svg viewBox="0 0 200 200" class="wolf-svg">
+            <!-- Crescent Moon Backdrop -->
+            <path d="M 160 25 A 35 35 0 0 1 125 60 A 35 35 0 1 0 160 25 Z" fill="none" stroke="#475569" stroke-width="1.8" opacity="0.6"/>
+            
+            <!-- Howling Direwolf Profile Outline -->
+            <path d="M 38,185 
+                     C 48,160 52,140 48,120
+                     C 42,105 50,90 62,75
+                     L 50,42 L 70,55
+                     C 80,45 92,40 108,42
+                     L 155,20 
+                     L 142,38
+                     L 125,48
+                     L 140,55 
+                     L 118,65
+                     C 105,75 95,85 92,100
+                     C 88,120 95,145 120,185" 
+                  fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            
+            <!-- Eye closed in howl -->
+            <path d="M 96,48 Q 103,52 100,56" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+            
+            <!-- Open mouth & Fangs detail -->
+            <path d="M 125,48 L 115,55 L 132,54" fill="none" stroke="#64748b" stroke-width="1.5"/>
+            <polygon points="128,47 124,52 121,48" fill="#e2e8f0"/>
+            <polygon points="126,55 122,50 119,55" fill="#e2e8f0"/>
+            
+            <!-- Jagged Mane / Direwolf Fur Texture -->
+            <path d="M 62,75 L 78,85 M 55,100 L 72,110 M 48,125 L 68,135 M 55,150 L 78,160" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M 85,115 L 70,125 M 95,138 L 80,150 M 105,162 L 90,175" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
     </div>
 
     <!-- Hidden Tooltip Element for Quotes -->
