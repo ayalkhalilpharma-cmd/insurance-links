@@ -24,21 +24,48 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 40px;
+            padding-top: 30px;
             padding-bottom: 40px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: #334155;
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
+        }
+
+        /* Mode Toggle Button */
+        .mode-toggle-btn {
+            background-color: #0f172a;
+            color: #f8fafc;
+            border: 2px solid #334155;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mode-toggle-btn:hover {
+            background-color: #334155;
+            transform: translateY(-2px);
         }
 
         /* Honeycomb Flex Layout */
@@ -91,7 +118,7 @@
             filter: brightness(1.15);
         }
 
-        /* --- Custom Retro Telephone Buttons --- */
+        /* Retro Telephone Buttons */
         .phone-wrapper {
             filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -120,7 +147,7 @@
             filter: brightness(1.2);
         }
 
-        /* --- F1 Keyboard Button Styles --- */
+        /* F1 Keyboard Button Styles */
         .key-wrapper {
             width: 170px; 
             height: 195px;
@@ -156,7 +183,6 @@
             text-decoration: none;
         }
 
-        /* Animates physical button press! */
         .key-wrapper:hover .key-3d {
             transform: translateY(6px);
             box-shadow: 0 4px 0 #94a3b8, 0 4px 4px rgba(0,0,0,0.2), inset 2px 2px 5px rgba(255,255,255,0.8);
@@ -164,7 +190,7 @@
             color: #0284c7;
         }
 
-        /* --- Dx and Rx Text Shapes --- */
+        /* Dx and Rx Text Shapes */
         .dx-rx-wrapper {
             width: 170px; 
             height: 195px;
@@ -205,7 +231,35 @@
             text-shadow: 0 0 20px var(--sym-clr);
         }
 
-        /* Giant Center Clock Hexagon */
+        /* Custom Lab, WhatsApp & Notes Wrappers */
+        .custom-shape-wrapper {
+            width: 170px;
+            height: 195px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .custom-shape-wrapper:hover {
+            transform: scale(1.15) translateY(-8px);
+            filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.3));
+            z-index: 10;
+        }
+
+        .custom-svg {
+            width: 150px;
+            height: 150px;
+            transition: filter 0.3s;
+        }
+
+        .custom-shape-wrapper:hover .custom-svg {
+            filter: brightness(1.18);
+        }
+
+        /* Center Clock Hexagon */
         .clock-wrapper {
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
             margin: 10px 25px;
@@ -274,14 +328,153 @@
             visibility: visible;
             transform: translate(-50%, -100%) translateY(0);
         }
+
+        /* =========================================================
+           AHMEDELDEEB MODE (Eye-Comforting Blackboard Theme)
+           ========================================================= */
+        body.ahmedeldeeb-mode {
+            background-color: #121417 !important;
+            color: #e2e8f0 !important;
+        }
+
+        body.ahmedeldeeb-mode header h1 {
+            color: #f1f5f9 !important;
+            letter-spacing: 2px;
+            font-family: 'Courier New', Courier, monospace, sans-serif;
+        }
+
+        body.ahmedeldeeb-mode .mode-toggle-btn {
+            background-color: #22272e;
+            color: #38bdf8;
+            border-color: #38bdf8;
+        }
+
+        body.ahmedeldeeb-mode .honeycomb-grid {
+            gap: 12px;
+            max-width: 950px;
+        }
+
+        /* Reset wrappers to small rectangular boxes */
+        body.ahmedeldeeb-mode .hex-wrapper,
+        body.ahmedeldeeb-mode .phone-wrapper,
+        body.ahmedeldeeb-mode .key-wrapper,
+        body.ahmedeldeeb-mode .dx-rx-wrapper,
+        body.ahmedeldeeb-mode .custom-shape-wrapper {
+            width: 170px !important;
+            height: 48px !important;
+            filter: none !important;
+            transform: none !important;
+        }
+
+        body.ahmedeldeeb-mode .hex-wrapper:hover,
+        body.ahmedeldeeb-mode .phone-wrapper:hover,
+        body.ahmedeldeeb-mode .key-wrapper:hover,
+        body.ahmedeldeeb-mode .dx-rx-wrapper:hover,
+        body.ahmedeldeeb-mode .custom-shape-wrapper:hover {
+            transform: translateY(-2px) !important;
+            filter: none !important;
+        }
+
+        /* Uniform Simple Blackboard Buttons */
+        body.ahmedeldeeb-mode .visit-btn,
+        body.ahmedeldeeb-mode .phone-wrapper a,
+        body.ahmedeldeeb-mode .key-wrapper a,
+        body.ahmedeldeeb-mode .dx-rx-wrapper a,
+        body.ahmedeldeeb-mode .custom-shape-wrapper a {
+            width: 100% !important;
+            height: 100% !important;
+            clip-path: none !important;
+            background: #1c2128 !important;
+            border: 1px solid #444c56 !important;
+            border-radius: 6px !important;
+            color: #e6edf3 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-size: 0.88rem !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            letter-spacing: 0.5px !important;
+            box-shadow: none !important;
+            text-decoration: none !important;
+            padding: 0 10px !important;
+            text-align: center !important;
+            box-sizing: border-box !important;
+        }
+
+        body.ahmedeldeeb-mode .visit-btn:hover,
+        body.ahmedeldeeb-mode .phone-wrapper a:hover,
+        body.ahmedeldeeb-mode .key-wrapper a:hover,
+        body.ahmedeldeeb-mode .dx-rx-wrapper a:hover,
+        body.ahmedeldeeb-mode .custom-shape-wrapper a:hover {
+            background: #2d333b !important;
+            border-color: #768390 !important;
+            color: #ffffff !important;
+        }
+
+        /* Hide SVGs and complex graphics in Blackboard Mode */
+        body.ahmedeldeeb-mode [data-label] * {
+            display: none !important;
+        }
+
+        /* Display simple clean text labels for icon buttons */
+        body.ahmedeldeeb-mode [data-label]::after {
+            content: attr(data-label);
+            display: block;
+            font-size: 0.88rem;
+            color: #e6edf3;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* Simplified Clock for Ahmedeldeeb Mode */
+        body.ahmedeldeeb-mode .clock-wrapper {
+            margin: 10px 0 !important;
+            filter: none !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        body.ahmedeldeeb-mode .clock-hex {
+            width: 360px !important;
+            height: auto !important;
+            padding: 10px 20px !important;
+            background-color: #1c2128 !important;
+            border: 1px solid #444c56 !important;
+            border-radius: 8px !important;
+            clip-path: none !important;
+        }
+
+        body.ahmedeldeeb-mode #clock-time {
+            font-size: 1.6rem !important;
+            color: #38bdf8 !important;
+            margin-bottom: 2px !important;
+        }
+
+        body.ahmedeldeeb-mode #clock-day {
+            font-size: 0.95rem !important;
+            color: #94a3b8 !important;
+        }
+
+        body.ahmedeldeeb-mode #clock-date {
+            font-size: 0.85rem !important;
+            color: #64748b !important;
+            margin-top: 2px !important;
+        }
     </style>
     
+    <!-- GoatCounter Tracking Script -->
     <script data-goatcounter="https://khalil-pharmacy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
     <header>
         <h1>Mena's Online Directory</h1>
+        <button id="mode-toggle" class="mode-toggle-btn" onclick="toggleAhmedeldeebMode()">
+            <span>✏️ Ahmedeldeeb Mode</span>
+        </button>
     </header>
 
     <div class="honeycomb-grid">
@@ -290,12 +483,16 @@
             <a href="https://aspircode.com/online/login" target="_blank" class="visit-btn" style="--clr: #D32F2F;">Al - Mashreq</a>
         </div>
 
+        <!-- F1 BUTTON (Codes) -->
         <div class="key-wrapper" data-title="Codes">
-            <a href="https://ayalkhalilpharma-cmd.github.io/codes/" target="_blank" class="key-3d">F1</a>
+            <a href="https://ayalkhalilpharma-cmd.github.io/codes/" target="_blank" class="key-3d" data-label="Codes (F1)">
+                <span>F1</span>
+            </a>
         </div>
         
+        <!-- BRANCH NUMBERS -->
         <div class="phone-wrapper" data-title="Branch Numbers">
-            <a href="https://ayalkhalilpharma-cmd.github.io/khalil-guide/" target="_blank">
+            <a href="https://ayalkhalilpharma-cmd.github.io/khalil-guide/" target="_blank" data-label="Branch Numbers">
                 <svg viewBox="0 0 200 200" class="retro-phone" style="--phone-clr: #2E7D32;">
                     <path d="M 55,70 L 145,70 C 155,70 162,75 165,85 L 185,165 C 188,177 180,190 165,190 L 35,190 C 20,190 12,177 15,165 L 35,85 C 38,75 45,70 55,70 Z" fill="currentColor"/>
                     <path d="M 35,50 C 35,15 80,10 100,10 C 120,10 165,15 165,50" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
@@ -315,8 +512,9 @@
             </a>
         </div>
 
+        <!-- COMPANY CONTACTS -->
         <div class="phone-wrapper" data-title="Company Contacts">
-            <a href="https://ayalkhalilpharma-cmd.github.io/company-guide/" target="_blank">
+            <a href="https://ayalkhalilpharma-cmd.github.io/company-guide/" target="_blank" data-label="Company Contacts">
                 <svg viewBox="0 0 200 200" class="retro-phone" style="--phone-clr: #1565C0;">
                     <path d="M 55,70 L 145,70 C 155,70 162,75 165,85 L 185,165 C 188,177 180,190 165,190 L 35,190 C 20,190 12,177 15,165 L 35,85 C 38,75 45,70 55,70 Z" fill="currentColor"/>
                     <path d="M 35,50 C 35,15 80,10 100,10 C 120,10 165,15 165,50" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
@@ -336,14 +534,55 @@
             </a>
         </div>
 
+        <!-- LAB FLASK BUTTON -->
+        <div class="custom-shape-wrapper" data-title="Lab Services">
+            <a href="https://mzalkhalilpharma-sudo.github.io/LAB/" target="_blank" data-label="Lab Services">
+                <svg viewBox="0 0 200 200" class="custom-svg">
+                    <path d="M 85,20 L 115,20 L 115,60 L 165,150 C 175,170 160,185 140,185 L 60,185 C 40,185 25,170 35,150 L 85,60 Z" fill="#0EA5E9" opacity="0.85"/>
+                    <path d="M 58,135 Q 100,122 142,135 L 152,154 C 158,168 148,178 135,178 L 65,178 C 52,178 42,168 48,154 Z" fill="#0284C7"/>
+                    <rect x="76" y="14" width="48" height="12" rx="6" fill="#0369A1"/>
+                    <circle cx="100" cy="100" r="7" fill="#E0F2FE" opacity="0.85"/>
+                    <circle cx="116" cy="78" r="5" fill="#E0F2FE" opacity="0.85"/>
+                    <circle cx="90" cy="142" r="6" fill="#E0F2FE" opacity="0.85"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- RED WHATSAPP BUTTON WITH 'K' -->
+        <div class="custom-shape-wrapper" data-title="WhatsApp Responses">
+            <a href="https://mzalkhalilpharma-sudo.github.io/whatsapp-responses/" target="_blank" data-label="WhatsApp Responses">
+                <svg viewBox="0 0 200 200" class="custom-svg">
+                    <path d="M 100,20 C 55,20 20,55 20,100 C 20,118 25,135 34,150 L 22,182 L 56,171 C 69,178 84,180 100,180 C 145,180 180,145 180,100 C 180,55 145,20 100,20 Z" fill="#DC2626"/>
+                    <text x="100" y="128" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="82" fill="#FFFFFF" text-anchor="middle">K</text>
+                </svg>
+            </a>
+        </div>
+
+        <!-- NOTE TABLET BUTTON -->
+        <div class="custom-shape-wrapper" data-title="Auto Notes">
+            <a href="https://mzalkhalilpharma-sudo.github.io/AUTO-NOTES/" target="_blank" data-label="Auto Notes">
+                <svg viewBox="0 0 200 200" class="custom-svg">
+                    <rect x="35" y="28" width="130" height="155" rx="14" fill="#334155"/>
+                    <rect x="45" y="44" width="110" height="128" rx="8" fill="#F8FAFC"/>
+                    <rect x="75" y="18" width="50" height="22" rx="6" fill="#64748B"/>
+                    <line x1="60" y1="70" x2="140" y2="70" stroke="#0284C7" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="60" y1="95" x2="140" y2="95" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="60" y1="120" x2="140" y2="120" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="60" y1="145" x2="110" y2="145" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Dx BUTTON -->
         <div class="dx-rx-wrapper" data-title="Diagnosis Abbreviations">
-            <a href="https://ayalkhalilpharma-cmd.github.io/Diagnosis-abbrev.-guide/" target="_blank" class="symbol-text" style="--sym-clr: #F59E0B;">
+            <a href="https://ayalkhalilpharma-cmd.github.io/Diagnosis-abbrev.-guide/" target="_blank" class="symbol-text" style="--sym-clr: #F59E0B;" data-label="Diagnosis (Dx)">
                 D<sub>x</sub>
             </a>
         </div>
 
+        <!-- Rx BUTTON -->
         <div class="dx-rx-wrapper" data-title="Prescription Abbreviations">
-            <a href="https://ayalkhalilpharma-cmd.github.io/PRISCRIPTION-ABB./" target="_blank" class="symbol-text" style="--sym-clr: #D946EF;">
+            <a href="https://ayalkhalilpharma-cmd.github.io/PRISCRIPTION-ABB./" target="_blank" class="symbol-text" style="--sym-clr: #D946EF;" data-label="Prescription (Rx)">
                 R<sub>x</sub>
             </a>
         </div>
@@ -356,20 +595,21 @@
             <a href="https://i-care.globemedegypt.com:8034/Index.cfm" target="_blank" class="visit-btn" style="--clr: #7B1FA2;">GlobeMed</a>
         </div>
         
-        <div class="hex-wrapper" data-title="HelpAtCare">
-            <a href="https://www.helpatcare.com/login" target="_blank" class="visit-btn" style="--clr: #512DA8;">HelpAtCare</a>
-        </div>
-        
-        <div class="hex-wrapper" data-title="Med-Right">
-            <a href="https://medtpa.med-right.com/Login" target="_blank" class="visit-btn" style="--clr: #303F9F;">Med-Right</a>
-        </div>
-        
+        <!-- CENTER CLOCK -->
         <div class="clock-wrapper">
             <div class="clock-hex">
                 <div id="clock-time">00:00:00</div>
                 <div id="clock-day">Day</div>
                 <div id="clock-date">Month 00, Year</div>
             </div>
+        </div>
+
+        <div class="hex-wrapper" data-title="HelpAtCare">
+            <a href="https://www.helpatcare.com/login" target="_blank" class="visit-btn" style="--clr: #512DA8;">HelpAtCare</a>
+        </div>
+        
+        <div class="hex-wrapper" data-title="Med-Right">
+            <a href="https://medtpa.med-right.com/Login" target="_blank" class="visit-btn" style="--clr: #303F9F;">Med-Right</a>
         </div>
 
         <div class="hex-wrapper" data-title="Med-Right (Old)">
@@ -410,6 +650,7 @@
 
     </div>
 
+    <!-- Hidden Tooltip Element for Quotes -->
     <div id="quote-tooltip" class="quote-tooltip"></div>
 
     <script>
@@ -436,6 +677,22 @@
         updateClock();
         setInterval(updateClock, 1000);
 
+        /* Ahmedeldeeb Mode Toggle Script */
+        function toggleAhmedeldeebMode() {
+            document.body.classList.toggle('ahmedeldeeb-mode');
+            const isModeOn = document.body.classList.contains('ahmedeldeeb-mode');
+            localStorage.setItem('ahmedeldeebMode', isModeOn ? 'enabled' : 'disabled');
+            
+            const btn = document.getElementById('mode-toggle');
+            btn.innerHTML = isModeOn ? '<span>☀️ Normal Mode</span>' : '<span>✏️ Ahmedeldeeb Mode</span>';
+        }
+
+        // Check stored mode state on page load
+        if (localStorage.getItem('ahmedeldeebMode') === 'enabled') {
+            document.body.classList.add('ahmedeldeeb-mode');
+            document.getElementById('mode-toggle').innerHTML = '<span>☀️ Normal Mode</span>';
+        }
+
         const quotes = [
             "“The secret of getting ahead is getting started.”",
             "“Hard work beats talent when talent doesn't work hard.”",
@@ -450,16 +707,15 @@
         ];
 
         const tooltip = document.getElementById('quote-tooltip');
-        
-        // Ensure ALL wrappers (hex, phone, key, and dx/rx text shapes) trigger tooltips!
-        const interactiveItems = document.querySelectorAll('.hex-wrapper, .phone-wrapper, .key-wrapper, .dx-rx-wrapper');
+        const interactiveItems = document.querySelectorAll('.honeycomb-grid > div:not(.clock-wrapper)');
 
         interactiveItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
+                if (document.body.classList.contains('ahmedeldeeb-mode')) return; // Disable hover tooltips in eye-comfort mode
+                
                 const title = item.getAttribute('data-title');
                 const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
                 
-                // Display title + quote together on hover
                 tooltip.innerHTML = `<strong style="color: #60a5fa; display: block; margin-bottom: 4px;">${title}</strong>${randomQuote}`;
                 tooltip.classList.add('show');
                 
